@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword(passwordLength, addLowercase, addUppercase, addNumbers, addSymbols) {
+function generatePassword(length, addLowercase, addUppercase, addNumbers, addSymbols) {
   var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numbersChars = "1234567890";
@@ -18,11 +18,20 @@ function generatePassword(passwordLength, addLowercase, addUppercase, addNumbers
   
   console.log(addedChars);
 
-  return '';
+  if(addedChars.length <= 0){
+    return '(password must have atleast 1 charactor type)'
+  }
+
+  for(let i = 0; i < length; i++){
+    const randomIndex = Math.floor(Math.random() * allowedChars.length);
+    password += allowedChars[randomIndex];
+  }
+  
 }
 
+console.log(generatePassword.addedChars);
 
-var passwordLength = 15;
+passwordLength = 15
 var addLowercase = true;
 var addUppercase = true;
 var addNumbers = true;

@@ -45,11 +45,20 @@ function generatePassword() {
   alert("password must have atleast 1 charactor type");
   return null;
   }
-  console.log("addedChars",addedChars.length)
+
+  if(passwordLength > 128){
+    alert("password must be less then 128 charactors");
+    return null;
+  }
+    
+  if(passwordLength < 8){
+    alert("password must be more than 8 charactors");
+    return null;
+  }
+
+
   for(let i = 0; i < passwordLength; i++){
-    console.log("addedChars1",addedChars.length)
     var randomIndex = Math.floor(Math.random() * addedChars.length);
-    console.log("random",randomIndex)
     password += addedChars[randomIndex];
   }
   console.log("password",password);

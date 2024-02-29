@@ -75,7 +75,7 @@ function passwordDetails() {
   addNumbers = confirm("do you want to include numbers");
   addSymbols = confirm("do you want to include symbols");
 }
-// Write password to the #password input
+
 function writePassword() {
   //call a function to set character booleans with window.alert
   passwordDetails();
